@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input type="button" value="Live button!" id="myForm">
+        <p id="p"></p>
+    </div>
+    <script type="text/javascript">
+        let x = document.getElementById("myForm");
+        x.addEventListener("click", myClickFunction, true);
+        x.addEventListener("mouseover", myHoverFunction, true);
+        x.addEventListener("mouseout", myMoveFunction, true);
+
+        let t = document.getElementsByTagName("div")[0];
+
+        function myClickFunction(){
+            let tag = document.createElement("p");
+            let text = document.createTextNode("I was pressed!");
+            tag.appendChild(text);
+            t.appendChild(tag);
+        }
+
+        function myHoverFunction(){
+            let tag = document.createElement("p");
+            let text = document.createTextNode("Mouse on me!");
+            tag.appendChild(text);
+            t.appendChild(tag);
+        }   
+
+        function myMoveFunction(){
+            let tag = document.createElement("p");
+            let text = document.createTextNode("Mouse is not on me!");
+            tag.appendChild(text);
+            t.appendChild(tag);
+        }   
+
+     </script>
+</body>
+</html>
